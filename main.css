@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 75%;
+  max-height: 300px;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+h1,
+h2 {
+  font-family: Lora, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+a,
+a:visited {
+  font-family: Lora, Helvetica, Arial, sans-serif;
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00ddff;
+}
+
+a:active {
+  color: #deb887;
+}
+
+h1,
+h1 a,
+h1 a:visited,
+h1 a:active,
+h1 a:hover {
+  font-weight: 600;
+  font-size: 55px;
+  text-align: center;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 8px;
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: large;
+}
+
+nav,
+section {
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+article {
+  display: grid;
+  grid-template-rows: 80px;
+}
+
+.post-date {
+  margin: 8px;
+  align-self: end;
+  justify-self: end;
+  text-transform: uppercase;
+  font-weight: 550;
+}
+
+section {
+  display: grid;
+  /* grid-template-rows: auto auto auto; */
+}
+
+section h2,
+section p {
+  padding: 8px;
+}
+
+figure {
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+}
+
+@media screen and (min-width: 750px) {
+  ul {
+    display: flex;
+    justify-self: end;
+  }
+
+  article {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+  }
+
+  .post-date {
+    margin-top: 25px;
+    align-self: start;
+    text-align: right;
+  }
+
+  section {
+    border-top: none;
+    border-left: 1px solid #d0d0d0;
+  }
+}
