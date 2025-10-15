@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "hurme";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("hurme-regular"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3regular-webfont.woff2")
+      format("woff2"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3regular-webfont.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "hurme";
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: local("hurme-light"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3light-webfont.woff2")
+      format("woff2"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3light-webfont.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "hurme";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local("hurme-semibold"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3semibold-webfont.woff2")
+      format("woff2"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3semibold-webfont.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "hurme";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("hurme-bold"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3bold-webfont.woff2")
+      format("woff2"),
+    url("https://ssl.quiksilver.com/fonts/hurme/hurmedesign-hurmegeometricsans3bold-webfont.woff")
+      format("woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-size: 10px;
+  font-family: "hurme", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-size: clamp(3rem, 2.5631rem + 1.165vw, 4.8rem);
+}
+
+span.version {
+  background-color: #ffff00;
+  color: rgba(100, 100, 70, 0.7);
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 50px 0 0;
+  display: inline-block;
+  padding: 3px 5px 2px;
+  clear: both;
+}
+
+p,
+.r-1ups-description-copy {
+  font-size: 1.6rem;
+  line-height: 1.6em;
+  margin-top: 0;
+}
+
+.headline {
+  width: 100%;
+}
+
+.promo-container {
+  width: 100%;
+  max-width: 375px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  margin: 25px 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  &.centered {
+    text-align: center;
+    .headline {
+      max-width: 375px;
+    }
+    p {
+      width: 100%;
+      margin: 0 auto 16px;
+    }
+  }
+}
+
+.inputs {
+  width: 100%;
+  max-width: 375px;
+}
+
+.form {
+  display: flex;
+}
+
+.input,
+.btn {
+  border-radius: 0;
+  background: transparent;
+  border: 1px solid #000;
+  height: 36px;
+  font-family: "hurme", sans-serif;
+}
+
+.input {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.categories {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 6px;
+  margin-top: 1.6rem;
+  &.links {
+    gap: 16px;
+    a {
+      font-weight: 400;
+      color: #000;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.btn {
+  font-weight: 600;
+  padding: 8px 10px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  height: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 50%;
+  min-width: calc(33% - 3px);
+  cursor: pointer;
+  &-copy {
+    background: transparent;
+    color: #000;
+    width: calc(33% - 3px);
+    margin-left: -1px;
+    text-transform: uppercase;
+    transition: 0.2s all ease-in-out;
+    svg {
+      margin-right: 4px;
+    }
+    &:hover {
+      background: #000;
+      color: #fff;
+      svg {
+        filter: invert(100%) sepia(0%) saturate(7494%) hue-rotate(3deg)
+          brightness(100%) contrast(101%);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .headline {
+    max-width: 480px;
+  }
+  .promo-container {
+    max-width: 1280px;
+    flex-flow: row nowrap;
+    justify-content: center;
+    &.left .headline {
+      order: 2;
+      padding-left: 32px;
+      max-width: 480px;
+    }
+    &.centered {
+      flex-flow: column;
+    }
+    &.right {
+      .headline {
+        padding-right: 32px;
+        text-align: right;
+        p {
+          float: right;
+        }
+      }
+    }
+    &.between {
+      justify-content: space-between;
+      .headline {
+        padding-right: 32px;
+      }
+    }
+  }
+  .links a {
+    font-size: 1.4rem;
+  }
+}

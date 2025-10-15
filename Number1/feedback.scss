@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+// Good use of variables.
+// I generally put font families and sizes here as well.
+$border-color: #d0d0d0;
+$header-body-color: #333;
+$link-color-1: #666;
+$link-color-2: #00ddff;
+$link-color-3: #deb887;
+
+// This is an alright mixin, You could probably structure your code different to get ride of the mixin.
+// Mixins are useful when you have a group of css rules that are repeated several times in your code.
+@mixin header() {
+  font-weight: 600;
+  font-size: 55px;
+  color: $header-body-color;
+}
+
+// This is an excellent use of a mixin.
+@mixin breakpoint() {
+  @media (min-width: 750px) {
+    @content;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 75%;
+  max-height: 300px;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: $header-body-color;
+}
+
+h1,
+h2 {
+  font-family: Lora, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+// Excellent example of nesting.
+a {
+  font-family: Lora, Helvetica, Arial, sans-serif;
+  color: $link-color-1;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-2;
+  }
+
+  &:active {
+    color: $link-color-3;
+  }
+}
+
+h1 {
+  text-align: center;
+
+  // This code is overally complicated. It should be written it like this.
+  // a {
+    // @include header;
+    // &:visited, &:active, &:hover {
+    //   @include header;
+    // }
+  // }
+  // I really probably would use inheritance instead of a mixin here.
+  // https://sass-lang.com/guide/#extend-inheritance
+
+  a {
+    @include header;
+    &:visited {
+      @include header;
+    }
+    &:active {
+      @include header;
+    }
+    &:hover {
+      @include header;
+    }
+  }
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint {
+    & {
+      display: flex;
+      justify-self: end;
+    }
+  }
+}
+
+// You should nests this with the rule group above. e.g.
+// nav ul {
+//   margin: 0;
+//   padding: 0;
+
+//   @include breakpoint {
+//     & {
+//       display: flex;
+//       justify-self: end;
+//     }
+//   }
+
+//   li {
+//     padding: 8px;
+//     list-style: none;
+//     text-align: center;
+//     text-transform: uppercase;
+//     font-size: large;
+//   }
+// }
+nav ul li {
+  padding: 8px;
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: large;
+}
+
+nav,
+section {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+article {
+  display: grid;
+  grid-template-rows: 80px;
+
+  @include breakpoint {
+    & {
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto;
+    }
+  }
+}
+
+.post-date {
+  margin: 8px;
+  align-self: end;
+  justify-self: end;
+  text-transform: uppercase;
+  font-weight: 550;
+
+  @include breakpoint {
+    & {
+      margin-top: 25px;
+      align-self: start;
+      text-align: right;
+    }
+  }
+}
+
+section {
+  display: grid;
+
+  @include breakpoint {
+    & {
+      border-top: none;
+      border-left: 1px solid $border-color;
+    }
+  }
+}
+
+section h2,
+section p {
+  padding: 8px;
+}
+
+figure {
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+}
