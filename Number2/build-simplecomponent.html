@@ -6,31 +6,46 @@
     <title>Document</title>
     <link rel="stylesheet" href="build-simplecomponent.css" />
   </head>
-  <body>
+  <body class="body">
     <section class="cart">
-      <h1 class="cart__title">Your Cart</h1>
+      <h2 class="cart__title">Your Cart</h2>
       <p class="cart__numitems">3</p>
       <div class="cart__itemlist">
         <div class="cart__item">
-          <p class="item__name">Product Name</p>
-          <p class="item__info">Brief description</p>
-          <p class="item__price">$8</p>
+          <p class="cart__item-name">Product Name</p>
+          <p class="cart__item-info">Brief description</p>
+          <p class="cart__item-price">$12</p>
         </div>
         <div class="cart__item">
-          <p class="item__name">Product Name</p>
-          <p class="item__info">Brief description</p>
-          <p class="item__price">$8</p>
+          <p class="cart__item-name">Second Product</p>
+          <p class="cart__item-info">Brief description</p>
+          <p class="cart__item-price">$8</p>
         </div>
         <div class="cart__item">
-          <p class="item__name">Second Product</p>
-          <p class="item__info">Brief description</p>
-          <p class="item__price">$8</p>
+          <p class="cart__item-name">Third item</p>
+          <p class="cart__item-info">Brief description</p>
+          <p class="cart__item-price">$5</p>
         </div>
-        <div class="cart__item">
-          <p class="item__name">Product Name</p>
-          <p class="item__info">Brief description</p>
-          <p class="item__price">$8</p>
+        <div class="cart__item cart__item--promo">
+          <p class="cart__item-name">Promo Code</p>
+          <p class="cart__item-info">EXAMPLECODE</p>
+          <p class="cart__item-price">-$5</p>
         </div>
+        <div class="cart__item cart__item--total">
+          <p class="cart__item-name">Total (USD)</p>
+          <p class="cart__item-price">$20</p>
+        </div>
+      </div>
+      <div class="cart__promo">
+        <form class="promo">
+          <input
+            class="promo__input"
+            type="text"
+            placeholder="Promo code"
+            aria-label="Enter your promo code"
+          />
+          <button class="promo__button" type="submit">Redeem</button>
+        </form>
       </div>
     </section>
   </body>
