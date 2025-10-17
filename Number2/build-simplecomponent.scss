@@ -38,11 +38,13 @@ $green: #42b15b;
     padding: 2px 10px;
     width: max-content;
     border-radius: 10px;
+    font-weight: bold;
   }
 
   &__itemlist {
     grid-column: 1/3;
     overflow: hidden;
+    margin-top: 1em;
     background-color: white;
     border: 1px solid $gray-2;
     border-radius: 5px;
@@ -51,7 +53,7 @@ $green: #42b15b;
   &__item {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 1em;
+    padding: 0.75em 1em;
     &:not(:last-of-type) {
       border-bottom: 1px solid $gray-2;
     }
@@ -71,6 +73,17 @@ $green: #42b15b;
       margin: 0;
       color: $gray-3;
     }
+    &--promo {
+      background-color: $gray-1;
+      & > .cart__item-name,
+      .cart__item-info,
+      .cart__item-price {
+        color: $green;
+      }
+    }
+    &--total > .cart__item-price {
+      font-weight: bold;
+    }
   }
 
   &__item-info {
@@ -84,18 +97,33 @@ $green: #42b15b;
 
   &__promo {
     grid-column: 1/3;
-    background-color: white;
+    margin-top: 1em;
     padding: 0.5em;
+    background-color: white;
+    border: 1px solid $gray-2;
+    border-radius: 5px;
   }
 }
 
 .promo {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto max-content;
   gap: 0;
+  &__input,
+  &__button {
+    font-size: 1em;
+    border: 1px solid $gray-2;
+    padding: 0.6em;
+  }
   &__input {
-    padding: 0.5em;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
   }
   &__button {
-    padding: 0.5em;
+    @include white-on-gray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
   }
 }
