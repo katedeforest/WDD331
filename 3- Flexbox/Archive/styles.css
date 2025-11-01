@@ -1,0 +1,40 @@
+.row-grid {
+  display: flex;
+  flex-flow: row wrap;
+  width: 58%;
+  justify-self: center;
+  gap: 0.5em;
+}
+
+.col-grid {
+  display: flex;
+  flex-flow: column wrap;
+  width: 50%;
+  height: 2350px;
+  justify-self: center;
+  gap: 0.5em;
+  align-content: center;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 0.5em;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.row-grid .card img {
+  height: 85%;
+  width: 100%;
+}
+
+.col-grid .card img {
+  height: calc(100% - 30px);
+  object-fit: contain;
+}
+
+.card h2 {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
