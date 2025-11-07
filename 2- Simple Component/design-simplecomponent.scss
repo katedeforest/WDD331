@@ -50,10 +50,11 @@
   .post-card {
     display: flex;
     max-width: 500px;
-  }
-  .post-card__img {
-    height: 100%;
-    width: 40%;
-    order: 2;
+
+    &__img {
+      height: 100%;
+      width: 40%;
+      order: 2;
+    }
   }
 }
