@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+:root {
+  --mono: 0; /* Monospace: Use a value from 0 to 1 */
+  --casl: 0; /* Casual: Use a value from 0 to 1 */
+  --wght: 300; /* Weight: Use a value from 300 to 1000 */
+  --slnt: 0; /* Slant: Use a value from -15 to 0 */
+  --crsv: 0; /* Cursive: Use a value from 0 to 1 */
+}
+
+* {
+  font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--wght);
+  font-style: normal;
+  font-variation-settings: "slnt" var(--slnt), "CASL" var(--casl), "CRSV" var(--crsv), "MONO" var(--mono);
+}
+
+body {
+  margin: 2rem auto;
+  max-width: 70ch;
+  line-height: 1.5rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  --wght: 500;
+  margin-bottom: 1.5rem;
+  margin: 2rem 1rem;
+}
+
+p,
+ul,
+ol {
+  margin: 1rem;
+  text-justify: inter-word;
+}
+
+li {
+  padding-left: 0.5rem;
+}
+
+.alert {
+  display: flex;
+  align-items: start;
+}
+.alert__title {
+  font-size: 2rem;
+  --wght: 900;
+  margin: 0.15em 0 0 1rem;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  color: red;
+  padding-right: 0.5rem;
+  border-right: 1px solid red;
+}
+.alert p {
+  margin-top: 0;
+}
+
+strong {
+  --wght: 500;
+}
+strong em {
+  text-transform: uppercase;
+}
+
+code {
+  --mono: 1;
+  font-size: 0.8rem;
+}
+
+.tips {
+  list-style-type: "➤";
+}
+
+.narrow {
+  --wght: 400;
+}
+
+/*# sourceMappingURL=styles.css.map */
