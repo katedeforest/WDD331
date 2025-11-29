@@ -33,8 +33,12 @@
   top: -1rem;
   filter: brightness(var(--brightness, 0.01));
 }
+.quote__block__text {
+  margin-top: 0;
+}
 .quote__block__author {
   justify-self: end;
+  margin-bottom: 0;
 }
 .quote__imgdiv__img {
   height: 7rem;

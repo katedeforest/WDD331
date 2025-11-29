@@ -34,8 +34,13 @@
       filter: brightness(var(--brightness, 0.01));
     }
 
+    &__text {
+      margin-top: 0;
+    }
+
     &__author {
       justify-self: end;
+      margin-bottom: 0;
     }
   }
 
