@@ -2,20 +2,24 @@
   --max-width: 900px;
   --min-width: 300px;
   --preferred-width: 80%;
-  --quoteColor: lightblue;
+  --quote-color: maroon;
 }
 
 .quote {
   border-radius: 20px;
-  border: 4px solid var(--quoteColor);
+  border: 4px solid var(--quote-color);
   width: clamp(var(--min-width), var(--preferred-width), var(--max-width));
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
   display: flex;
+  justify-content: space-between;
   gap: 1em;
 
   &__block {
     position: relative;
+    --fluid-type-min: 1rem;
+    --fluid-type-target: 3vw;
+    --fluid-type-max: 1.3rem;
 
     &::before {
       --quoteSize: 2.75rem;
@@ -27,6 +31,7 @@
       position: absolute;
       left: -4rem;
       top: -1rem;
+      filter: brightness(var(--brightness, 0.01));
     }
 
     &__author {
@@ -39,8 +44,30 @@
       height: 7rem;
       position: relative;
       top: -3rem;
-      border: 0.25rem solid var(--quoteColor);
-      box-shadow: 0.5rem 0.5rem var(--quoteColor);
+      border: 0.25rem solid var(--quote-color);
+      box-shadow: 0.5rem 0.5rem var(--quote-color);
+    }
+  }
+}
+
+.dark-section {
+  --brightness: 100;
+  --quote-color: lightblue;
+  background-color: #333;
+  color: white;
+}
+
+@media screen and (max-width: 630px) {
+  .quote {
+    &__imgdiv {
+      align-self: end;
+      &__img {
+        height: 80px;
+        top: 1.25rem;
+        border: 0.25rem solid var(--quote-color);
+        border-radius: 50%;
+        box-shadow: none;
+      }
     }
   }
 }
